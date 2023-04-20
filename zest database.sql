@@ -3,42 +3,38 @@ Create database zest;
 Use zest;
 
 /*Table structure for table `users` */
-create table users(
-userID int  AUTO_INCREMENT,
-userLastName varchar(50),
-userFirstName varchar (50),
+create table students(
+studentID int  AUTO_INCREMENT,
+studentLastName varchar(50),
+studentFirstName varchar (50),
 phone varchar (50),
 address varchar(50),
-email varchar (50),
+studentEmail varchar (50),
 password varchar(50),
 signUpDate date,
-primary key(userID));
-
-Drop table users;
+primary key(studentID));
 
 /*Table structure for table `tutor profiles` */
-create table tutorprofiles(
+create table tutors(
 tutorID int  AUTO_INCREMENT,
-userID varchar(50),
-lastName varchar(50),
-firstName varchar(50),
+tutorLastName varchar(50),
+tutorFirstName varchar(50),
 phone varchar(50),
-email varchar(50),
+tutorEmail varchar(50),
 password varchar(50),
-background varchar(500),
+aboutTutor varchar(500),
 codingLanguages varchar (100),
-creationDate date,
+tutorSignUpDate date,
 meetingLink varchar(100),
 reviews varchar (200),
 primary key(tutorID));
 
 
 /*Table structure for table `login information` */
-Create table logininformation(
+Create table loginInformation(
 loginID int AUTO_INCREMENT,
 userName varchar (50),
 password varchar (50),
-role varchar(50),
 loginDate date,
 Primary Key (loginID));
 
@@ -49,14 +45,14 @@ languageName varchar(50),
 tutorID varchar(50),
 Primary Key (CodingLanguageID));
 
-Drop table codinglanguages;
 
 /*Table structure for table `Appointments` */
-create table appointments(
-appointmentID int AUTO_INCREMENT,
+create table bookedsessions(
+sessionID int AUTO_INCREMENT,
 userID varchar(50),
 tutorID varchar(50),
-appointmentDate varchar(50),
+sessionDate varchar(50),
 duration varchar(50),
 confirmationNumber varchar(50),
-primary key(AppointmentId));
+Primary Key (sessionID));
+
